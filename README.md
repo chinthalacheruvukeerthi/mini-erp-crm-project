@@ -302,18 +302,6 @@ http://localhost:5173
 - Email Notifications
 - Search & Filter
 - Export Reports (PDF & Excel)
-
----
-
-# Screenshots
-
-- Login Page
-- Dashboard
-- Customers Module
-- Products Module
-
-(Add screenshots here after project completion.)
-
 ---
 
 Conclusion
