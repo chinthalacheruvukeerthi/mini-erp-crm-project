@@ -143,8 +143,6 @@ Mini ERP CRM
       ├── Customer Report
       └── Product Report
 
-
-
 # Database Configuration
 
 Create a MySQL database.
