@@ -10,18 +10,18 @@ function Dashboard() {
 
   return (
     <div className="container mt-5">
-      <h1 className="text-center text-primary mb-5">
+      <h1 className="text-center text-white fw-bold mb-5">
         Mini ERP CRM Dashboard
       </h1>
 
-      <div className="row">
+      <div className="row justify-content-center">
 
         {/* Customers Card */}
         <div className="col-md-4 mb-4">
-          <div className="card shadow">
-            <div className="card-body text-center">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body text-center p-4">
               <h3>👥 Customers</h3>
-              <p>Manage all customers</p>
+              <p className="text-muted">Manage all customers</p>
 
               <button
                 className="btn btn-primary"
@@ -35,10 +35,10 @@ function Dashboard() {
 
         {/* Products Card */}
         <div className="col-md-4 mb-4">
-          <div className="card shadow">
-            <div className="card-body text-center">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body text-center p-4">
               <h3>📦 Products</h3>
-              <p>Manage all products</p>
+              <p className="text-muted">Manage all products</p>
 
               <button
                 className="btn btn-success"
@@ -52,10 +52,10 @@ function Dashboard() {
 
         {/* Logout Card */}
         <div className="col-md-4 mb-4">
-          <div className="card shadow">
-            <div className="card-body text-center">
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body text-center p-4">
               <h3>🚪 Logout</h3>
-              <p>Exit from application</p>
+              <p className="text-muted">Exit from application</p>
 
               <button
                 className="btn btn-danger"

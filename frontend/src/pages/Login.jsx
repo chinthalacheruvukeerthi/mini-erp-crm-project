@@ -17,21 +17,10 @@ function Login() {
         password,
       });
 
-      console.log("Response:", res.data);
-
-      // Save JWT Token
       localStorage.setItem("token", res.data.token);
-
-      // Go to Dashboard
       navigate("/dashboard", { replace: true });
-
     } catch (err) {
-      console.error(err);
-
-      alert(
-        err.response?.data?.message ||
-        "Login Failed"
-      );
+      alert(err.response?.data?.message || "Login Failed");
     }
   };
 
@@ -41,21 +30,40 @@ function Login() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
-        background: "#f5f5f5",
+        minHeight: "100vh",
+        background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
       }}
     >
       <form
         onSubmit={handleLogin}
         style={{
-          background: "#fff",
-          padding: "30px",
-          borderRadius: "10px",
-          boxShadow: "0 0 10px rgba(0,0,0,0.2)",
-          width: "350px",
+          background: "#ffffff",
+          padding: "35px",
+          borderRadius: "15px",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
+          width: "380px",
         }}
       >
-        <h2 style={{ textAlign: "center" }}>Mini ERP CRM Login</h2>
+        <h2
+          style={{
+            textAlign: "center",
+            color: "#0d6efd",
+            marginBottom: "25px",
+            fontWeight: "bold",
+          }}
+        >
+          Mini ERP CRM
+        </h2>
+
+        <p
+          style={{
+            textAlign: "center",
+            color: "#666",
+            marginBottom: "20px",
+          }}
+        >
+          Login to continue
+        </p>
 
         <input
           type="email"
@@ -64,8 +72,11 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           style={{
             width: "100%",
-            padding: "10px",
-            marginTop: "15px",
+            padding: "12px",
+            marginBottom: "15px",
+            borderRadius: "8px",
+            border: "1px solid #ccc",
+            boxSizing: "border-box",
           }}
           required
         />
@@ -77,8 +88,11 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           style={{
             width: "100%",
-            padding: "10px",
-            marginTop: "15px",
+            padding: "12px",
+            marginBottom: "20px",
+            borderRadius: "8px",
+            border: "1px solid #ccc",
+            boxSizing: "border-box",
           }}
           required
         />
@@ -87,9 +101,14 @@ function Login() {
           type="submit"
           style={{
             width: "100%",
-            padding: "10px",
-            marginTop: "20px",
+            padding: "12px",
+            backgroundColor: "#0d6efd",
+            color: "#fff",
+            border: "none",
+            borderRadius: "8px",
             cursor: "pointer",
+            fontSize: "16px",
+            fontWeight: "bold",
           }}
         >
           Login
