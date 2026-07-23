@@ -111,52 +111,37 @@ The Mini ERP CRM System addresses these challenges by providing a centralized we
 
 # Project Structure
 
-```
-mini-erp-crm-project
+Mini ERP CRM
 │
-├── backend
-│   │
-│   ├── config
-│   │    └── db.js
-│   │
-│   ├── middleware
-│   │
-│   ├── routes
-│   │    ├── authRoutes.js
-│   │    ├── customerRoutes.js
-│   │    └── productRoutes.js
-│   │
-│   ├── controllers
-│   │
-│   ├── .env
-│   ├── package.json
-│   └── server.js
+├── Login
+├── Dashboard
 │
-├── frontend
-│   │
-│   ├── public
-│   │
-│   ├── src
-│   │    ├── assets
-│   │    ├── components
-│   │    ├── pages
-│   │    │      ├── Login.jsx
-│   │    │      ├── Dashboard.jsx
-│   │    │      ├── Customers.jsx
-│   │    │      └── Products.jsx
-│   │    │
-│   │    ├── services
-│   │    ├── App.jsx
-│   │    └── main.jsx
-│   │
-│   ├── package.json
-│   └── vite.config.js
+├── Customer Management
+│     ├── Search
+│     ├── Add
+│     ├── Update
+│     ├── Delete
 │
-├── README.md
-└── .gitignore
-```
-
----
+├── Product Management
+│     ├── Search
+│     ├── Add
+│     ├── Update
+│     ├── Delete
+│
+├── Inventory
+│     ├── Stock In
+│     ├── Stock Out
+│     ├── Low Stock
+│
+├── Sales
+│     ├── Invoice
+│     ├── Bill
+│     ├── Customer Purchase
+│
+└── Reports
+      ├── Sales Report
+      ├── Customer Report
+      └── Product Report
 
 # Database Configuration
 
