@@ -1,176 +1,198 @@
-# Mini ERP CRM System
+# 🚀 Mini ERP CRM System
 
-## Project Overview
-
-Mini ERP CRM System is a full-stack web application developed to simplify customer and product management for small and medium-sized businesses. The application provides a secure login system, an interactive dashboard, and separate modules to manage customers and products efficiently.
-
-The project follows a client-server architecture where the frontend communicates with the backend through REST APIs, and all application data is stored in a MySQL database.
+A full-stack **Mini ERP CRM System** developed using **React.js, Node.js, Express.js, and MySQL**. This application helps businesses efficiently manage customers, products, inventory, and sales through a modern dashboard.
 
 ---
 
-# Problem Statement
+# 📖 Project Overview
 
-Many small businesses maintain customer and product information manually using spreadsheets or paper records. This process is time-consuming, error-prone, and difficult to maintain.
+Mini ERP CRM is designed to simplify daily business operations by providing modules for:
 
-The Mini ERP CRM System addresses these challenges by providing a centralized web application that allows users to securely manage customers and products through a simple interface.
+- Customer Management
+- Product Management
+- Inventory Management
+- Sales & Invoice Generation
+- Dashboard Analytics
 
----
-
-# Objectives
-
-- Develop a secure ERP CRM web application.
-- Manage customer information efficiently.
-- Manage product inventory.
-- Perform CRUD (Create, Read, Update, Delete) operations.
-- Connect the application with a MySQL database.
-- Provide a responsive and user-friendly interface.
+The system automatically updates inventory after every sale and provides business statistics through a centralized dashboard.
 
 ---
 
-# System Architecture
+# ✨ Features
 
-```
-                React Frontend
-                      │
-                      │ REST API
-                      ▼
-            Node.js + Express Backend
-                      │
-                      ▼
-                MySQL Database
-```
+## 🔐 Authentication
+- User Login
+- Secure Authentication
+- Logout
 
 ---
 
-# Technologies Used
+## 👥 Customer Management
+
+- Add Customer
+- Edit Customer
+- Delete Customer
+- Search Customer
+- Customer Status
+- Business Details
+- GST Number
+- Follow-up Date
+- Notes
+
+---
+
+## 📦 Product Management
+
+- Add Product
+- Update Product
+- Delete Product
+- Category
+- Brand
+- Supplier
+- Purchase Price
+- Selling Price
+- Product Status
+- Quantity Management
+
+---
+
+## 📋 Inventory Management
+
+- Stock In
+- Stock Out
+- Inventory History
+- Remarks
+- Automatic Product Quantity Update
+
+---
+
+## 🧾 Sales & Invoice
+
+- Customer Selection
+- Product Selection
+- Quantity Entry
+- Automatic Price Calculation
+- Automatic Total Calculation
+- Invoice Generation
+- Automatic Stock Reduction
+- Sales History
+
+---
+
+## 📊 Dashboard
+
+Displays real-time statistics:
+
+- 👥 Total Customers
+- 📦 Total Products
+- 📋 Inventory Transactions
+- 🧾 Total Sales
+- 💰 Total Revenue
+
+---
+
+# 🛠 Tech Stack
 
 ## Frontend
 
 - React.js
-- Bootstrap 5
-- Axios
 - React Router DOM
-- HTML5
-- CSS3
-- JavaScript (ES6)
-
----
+- Axios
+- Bootstrap 5
 
 ## Backend
 
 - Node.js
 - Express.js
-- JWT Authentication
-- bcryptjs
-- dotenv
-- CORS
-
----
 
 ## Database
 
 - MySQL
 
----
+## Tools
 
-# Features
-
-## Authentication
-
-- Secure Login
-- JWT Authentication
-- Logout Functionality
+- Git
+- GitHub
+- VS Code
+- Postman
 
 ---
 
-## Dashboard
-
-- Easy Navigation
-- Customer Module
-- Product Module
-
----
-
-## Customer Management
-
-- Add Customer
-- View Customer List
-- Update Customer Details
-- Delete Customer
-
----
-
-## Product Management
-
-- Add Product
-- View Product List
-- Update Product Details
-- Delete Product
-
----
-
-# Project Structure
-
-Mini ERP CRM
-│
-├── Login
-├── Dashboard
-│
-├── Customer Management
-│     ├── Search
-│     ├── Add
-│     ├── Update
-│     ├── Delete
-│
-├── Product Management
-│     ├── Search
-│     ├── Add
-│     ├── Update
-│     ├── Delete
-│
-├── Inventory
-│     ├── Stock In
-│     ├── Stock Out
-│     ├── Low Stock
-│
-├── Sales
-│     ├── Invoice
-│     ├── Bill
-│     ├── Customer Purchase
-│
-└── Reports
-      ├── Sales Report
-      ├── Customer Report
-      └── Product Report
-
-# Database Configuration
-
-Create a MySQL database.
+# 📁 Project Structure
 
 ```
-Database Name
-
-mini_erp_crm
-```
-
-Create a `.env` file inside the backend folder.
-
-```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=mini_erp_crm
-JWT_SECRET=your_secret_key
-PORT=5000
+mini-erp-crm-project/
+│
+├── backend/
+│   │
+│   ├── controllers/
+│   │     ├── authController.js
+│   │     ├── customerController.js
+│   │     ├── productController.js
+│   │     ├── inventoryController.js
+│   │     └── salesController.js
+│   │
+│   ├── routes/
+│   │     ├── authRoutes.js
+│   │     ├── customerRoutes.js
+│   │     ├── productRoutes.js
+│   │     ├── inventoryRoutes.js
+│   │     └── salesRoutes.js
+│   │
+│   ├── db.js
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   │
+│   ├── public/
+│   │
+│   ├── src/
+│   │     │
+│   │     ├── pages/
+│   │     │     ├── Login.jsx
+│   │     │     ├── Dashboard.jsx
+│   │     │     ├── Customers.jsx
+│   │     │     ├── Products.jsx
+│   │     │     ├── Inventory.jsx
+│   │     │     └── Sales.jsx
+│   │     │
+│   │     ├── services/
+│   │     │     └── api.js
+│   │     │
+│   │     ├── App.jsx
+│   │     ├── main.jsx
+│   │     └── index.css
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── README.md
+└── package.json
 ```
 
 ---
 
-# Installation Guide
+# 🗄 Database Tables
 
-## Step 1
+```
+users
 
-Clone the repository.
+customers
+
+products
+
+inventory
+
+sales
+```
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/chinthalacheruvukeerthi/mini-erp-crm-project.git
@@ -178,121 +200,178 @@ git clone https://github.com/chinthalacheruvukeerthi/mini-erp-crm-project.git
 
 ---
 
-## Step 2
-
-Move into the project directory.
-
-```bash
-cd mini-erp-crm-project
-```
-
----
-
-## Step 3
-
-Install Backend Dependencies
+## Backend Setup
 
 ```bash
 cd backend
+```
+
+Install dependencies
+
+```bash
 npm install
 ```
 
----
+Create `.env`
 
-## Step 4
+```env
+PORT=5000
 
-Install Frontend Dependencies
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=mini_erp_crm
+
+JWT_SECRET=your_secret_key
+```
+
+Run backend
 
 ```bash
-cd ../frontend
+npm run dev
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+```
+
+Install packages
+
+```bash
 npm install
 ```
 
----
-
-## Step 5
-
-Start Backend Server
+Run frontend
 
 ```bash
-cd ../backend
 npm run dev
 ```
 
-Server runs on:
+---
+
+# 📡 REST APIs
+
+## Authentication
+
+| Method | Endpoint |
+|---------|----------|
+| POST | /api/auth/login |
+
+---
+
+## Customers
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/customers |
+| POST | /api/customers |
+| PUT | /api/customers/:id |
+| DELETE | /api/customers/:id |
+| GET | /api/customers/count |
+
+---
+
+## Products
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/products |
+| POST | /api/products |
+| PUT | /api/products/:id |
+| DELETE | /api/products/:id |
+| GET | /api/products/count |
+
+---
+
+## Inventory
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/inventory |
+| POST | /api/inventory |
+| GET | /api/inventory/count |
+
+---
+
+## Sales
+
+| Method | Endpoint |
+|---------|----------|
+| GET | /api/sales |
+| POST | /api/sales |
+| GET | /api/sales/count |
+| GET | /api/sales/revenue |
+
+---
+
+# 🔄 Application Workflow
 
 ```
-http://localhost:5000
+User Login
+      │
+      ▼
+Dashboard
+      │
+      ├── Customers
+      │       │
+      │       └── CRUD Operations
+      │
+      ├── Products
+      │       │
+      │       └── CRUD Operations
+      │
+      ├── Inventory
+      │       │
+      │       ├── Stock In
+      │       └── Stock Out
+      │
+      └── Sales
+              │
+              ├── Select Customer
+              ├── Select Product
+              ├── Generate Invoice
+              └── Reduce Product Stock
 ```
 
 ---
 
-## Step 6
+# 📈 Dashboard Statistics
 
-Start Frontend
+The dashboard displays live information including:
 
-```bash
-cd ../frontend
-npm run dev
-```
-
-Application runs on:
-
-```
-http://localhost:5173
-```
+- Total Customers
+- Total Products
+- Inventory Transactions
+- Total Sales
+- Total Revenue
 
 ---
 
-# API Modules
+# 🔮 Future Enhancements
 
-### Authentication
-
-- Login
-
-### Customers
-
-- Add Customer
-- Get Customers
-- Update Customer
-- Delete Customer
-
-### Products
-
-- Add Product
-- Get Products
-- Update Product
-- Delete Product
-
----
-
-# Advantages
-
-- Easy to use interface
-- Secure authentication
-- Fast CRUD operations
-- Responsive design
-- Real-time database integration
-- Scalable architecture
-- Organized project structure
-
----
-
-# Future Enhancements
-
-- Order Management
-- Invoice Generation
-- Sales Analytics Dashboard
-- User Roles & Permissions
+- PDF Invoice Download
+- Excel Export
+- Sales Reports
+- Inventory Reports
+- Charts & Analytics
+- Low Stock Alerts
 - Email Notifications
-- Search & Filter
-- Export Reports (PDF & Excel)
+- Role-Based Authentication
+- Dark Mode
+- Mobile Responsive UI
+
 ---
 
-Conclusion
+# ✅ Conclusion
 
-The Mini ERP CRM System demonstrates the implementation of a complete full-stack web application using React, Node.js, Express, and MySQL. The project successfully integrates frontend, backend, authentication, REST APIs, and database operations to provide an efficient ERP CRM solution suitable for small business environments.
- 
- 
+The **Mini ERP CRM System** successfully provides a centralized platform for managing customers, products, inventory, and sales operations. The application streamlines daily business activities through an intuitive dashboard, automated inventory updates, and invoice generation.
 
-This project is developed for educational purposes and company case study evaluation.
+This project demonstrates the practical implementation of full-stack web development using **React.js, Node.js, Express.js, and MySQL**, following RESTful API architecture and CRUD operations. It also showcases database integration, frontend-backend communication, and real-time business statistics.
+
+The system is scalable and can be further enhanced with features such as PDF invoice generation, report exports, role-based authentication, advanced analytics, and cloud deployment, making it suitable for small and medium-sized businesses.
+
+Overall, this project provides a strong foundation for understanding Enterprise Resource Planning (ERP) and Customer Relationship Management (CRM) concepts while applying modern web development technologies.
