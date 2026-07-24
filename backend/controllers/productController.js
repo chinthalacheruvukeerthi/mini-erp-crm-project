@@ -2,21 +2,59 @@ const db = require("../db");
 
 // Get Products
 const getProducts = (req, res) => {
-  db.query("SELECT * FROM products", (err, result) => {
+  const search = req.query.search;
+
+  let sql = "SELECT * FROM products";
+  let values = [];
+
+  if (search) {
+    sql +=
+      " WHERE name LIKE ? OR category LIKE ? OR brand LIKE ? OR supplier LIKE ?";
+
+    values = [
+      `%${search}%`,
+      `%${search}%`,
+      `%${search}%`,
+      `%${search}%`,
+    ];
+  }
+
+  db.query(sql, values, (err, result) => {
     if (err) {
       return res.status(500).json({ message: "Database Error" });
     }
+
     res.json(result);
   });
 };
 
 // Add Product
 const addProduct = (req, res) => {
-  const { name, price, quantity } = req.body;
+  const {
+    name,
+    category,
+    brand,
+    supplier,
+    purchase_price,
+    selling_price,
+    quantity,
+    status,
+  } = req.body;
 
   db.query(
-    "INSERT INTO products(name, price, quantity) VALUES (?, ?, ?)",
-    [name, price, quantity],
+    `INSERT INTO products
+    (name,category,brand,supplier,purchase_price,selling_price,quantity,status)
+    VALUES(?,?,?,?,?,?,?,?)`,
+    [
+      name,
+      category,
+      brand,
+      supplier,
+      purchase_price,
+      selling_price,
+      quantity,
+      status,
+    ],
     (err) => {
       if (err) {
         return res.status(500).json({ message: "Database Error" });
@@ -30,11 +68,40 @@ const addProduct = (req, res) => {
 // Update Product
 const updateProduct = (req, res) => {
   const { id } = req.params;
-  const { name, price, quantity } = req.body;
+
+  const {
+    name,
+    category,
+    brand,
+    supplier,
+    purchase_price,
+    selling_price,
+    quantity,
+    status,
+  } = req.body;
 
   db.query(
-    "UPDATE products SET name=?, price=?, quantity=? WHERE id=?",
-    [name, price, quantity, id],
+    `UPDATE products SET
+      name=?,
+      category=?,
+      brand=?,
+      supplier=?,
+      purchase_price=?,
+      selling_price=?,
+      quantity=?,
+      status=?
+      WHERE id=?`,
+    [
+      name,
+      category,
+      brand,
+      supplier,
+      purchase_price,
+      selling_price,
+      quantity,
+      status,
+      id,
+    ],
     (err) => {
       if (err) {
         return res.status(500).json({ message: "Database Error" });
@@ -45,6 +112,7 @@ const updateProduct = (req, res) => {
   );
 };
 
+// Product Count
 const getProductCount = (req, res) => {
   db.query("SELECT COUNT(*) AS total FROM products", (err, result) => {
     if (err) {

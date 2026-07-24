@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Products from "./pages/Products";
+import Inventory from "./pages/Inventory";
+import Sales from "./pages/Sales";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/customers" element={<Customers />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/inventory" element={<Inventory />} />
+      <Route path="/sales" element={<Sales />} />
     </Routes>
   );
 }
